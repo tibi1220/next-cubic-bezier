@@ -9,7 +9,7 @@ interface Props {
 
 const DisplayCoords: React.FC<Props> = ({ coord, index }) => {
   return (
-    <div className="font-mono flex flex-col p-4 text-lg">
+    <div className="font-mono flex flex-col p-4">
       <div>
         x<sub>{index}</sub>: {Math.round(coord.x * 100) / 100}
       </div>
