@@ -48,6 +48,7 @@ const Circle: React.FC<Props> = ({ position, setPosition }) => {
       });
     }
   };
+
   const handlePointerUp = (e: Event) => {
     setPosition({
       ...position,
@@ -61,7 +62,7 @@ const Circle: React.FC<Props> = ({ position, setPosition }) => {
       cy={position.y}
       fill={position.active ? 'red' : 'black'}
       opacity=".5"
-      r={6}
+      r={9}
       onPointerDown={handlePointerDown}
       onPointerUp={handlePointerUp}
       onPointerMove={handlePointerMove}

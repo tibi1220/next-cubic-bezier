@@ -43,7 +43,7 @@ const BezierSvgBase: React.FC = () => {
   return (
     <>
       <div className="flex justify-around text-sm lg:text-lg xl:text-xl">
-        <div className="my-auto w-2/12 pl-10">
+        <div className="hidden sm:block my-auto w-2/12 pl-10">
           {p.map((elem, index) => (
             <DisplayCoords key={index} index={index + 1} coord={elem} />
           ))}
@@ -57,7 +57,7 @@ const BezierSvgBase: React.FC = () => {
           </div>
         </div>
 
-        <div className="w-10/12">
+        <div className="w-full sm:w-10/12">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             stroke="currentColor"
