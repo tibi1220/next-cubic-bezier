@@ -15,7 +15,9 @@ const LeftPanel: React.FC<Props> = ({ p, reset }) => {
   return (
     <>
       <div className="grid grid-cols-2 m-4 my-auto sm:w-3/12 sm:flex flex-col place-items-center">
-        <p className="col-span-2">A kontrol pontok egérrel elhúzhatóak.</p>
+        <p className="col-span-2 text-center pb-4">
+          (A kontrol pontok egérrel elhúzhatóak.)
+        </p>
         {p.map((elem, index) => (
           <DisplayCoords key={index} index={index + 1} coord={elem} />
         ))}
