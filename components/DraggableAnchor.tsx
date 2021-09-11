@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 
 export type Event = React.PointerEvent<SVGCircleElement>;
 export type State = {
@@ -17,6 +17,8 @@ interface Props {
 }
 
 const Circle: React.FC<Props> = ({ position, setPosition }) => {
+  const preventScroll = (e: TouchEvent) => e.preventDefault();
+
   const handlePointerDown = (e: Event) => {
     const target = e.target as HTMLElement;
     const box = target.getBoundingClientRect();
@@ -55,6 +57,16 @@ const Circle: React.FC<Props> = ({ position, setPosition }) => {
       active: false,
     });
   };
+
+  useEffect(() => {
+    if (position.active) {
+      document.addEventListener('touchmove', preventScroll, { passive: false });
+    }
+
+    return () => {
+      document.removeEventListener('touchmove', preventScroll, false);
+    };
+  }, [position.active]);
 
   return (
     <circle
