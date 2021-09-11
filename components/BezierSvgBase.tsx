@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import Circle from './DraggableAnchor';
 import LeftPanel from './LeftPanel';
 
@@ -18,7 +18,6 @@ const default4 = {
   x: 350,
   y: 50,
 };
-const def = [default1, default2, default3, default4];
 
 const BezierSvgBase: React.FC = () => {
   const [p1, setP1] = useState(default1);
@@ -26,19 +25,17 @@ const BezierSvgBase: React.FC = () => {
   const [p3, setP3] = useState(default3);
   const [p4, setP4] = useState(default4);
 
-  const p = [p1, p2, p3, p4];
-  const setP = [setP1, setP2, setP3, setP4];
-
   const reset = () => {
-    for (let i = 0; i < 4; i++) {
-      setP[i](def[i]);
-    }
+    setP1(default1);
+    setP2(default2);
+    setP3(default3);
+    setP4(default4);
   };
 
   return (
     <>
       <div className="flex flex-col-reverse sm:flex-row justify-around text-lg sm:text-md lg:text-lg xl:text-xl">
-        <LeftPanel p={p} reset={reset} />
+        <LeftPanel p={[p1, p2, p3, p4]} reset={reset} />
 
         <div className="w-full sm:w-9/12">
           <svg
