@@ -2,24 +2,25 @@ import React, { useState } from 'react';
 import Circle from './DraggableAnchor';
 import LeftPanel from './LeftPanel';
 
-const BezierSvgBase: React.FC = () => {
-  const default1 = {
-    x: 50,
-    y: 50,
-  };
-  const default2 = {
-    x: 350,
-    y: 350,
-  };
-  const default3 = {
-    x: 50,
-    y: 350,
-  };
-  const default4 = {
-    x: 350,
-    y: 50,
-  };
+const default1 = {
+  x: 50,
+  y: 50,
+};
+const default2 = {
+  x: 350,
+  y: 350,
+};
+const default3 = {
+  x: 50,
+  y: 350,
+};
+const default4 = {
+  x: 350,
+  y: 50,
+};
+const def = [default1, default2, default3, default4];
 
+const BezierSvgBase: React.FC = () => {
   const [p1, setP1] = useState(default1);
   const [p2, setP2] = useState(default2);
   const [p3, setP3] = useState(default3);
@@ -27,7 +28,6 @@ const BezierSvgBase: React.FC = () => {
 
   const p = [p1, p2, p3, p4];
   const setP = [setP1, setP2, setP3, setP4];
-  const def = [default1, default2, default3, default4];
 
   const reset = () => {
     for (let i = 0; i < 4; i++) {
