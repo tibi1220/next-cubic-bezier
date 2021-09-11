@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import Circle from './DraggableAnchor';
-import DisplayCoords from './DisplayCoords';
-
-type Point = {
-  x: number;
-  y: number;
-};
+import LeftPanel from './LeftPanel';
 
 const BezierSvgBase: React.FC = () => {
   const default1 = {
@@ -43,19 +38,7 @@ const BezierSvgBase: React.FC = () => {
   return (
     <>
       <div className="flex justify-around text-sm lg:text-lg xl:text-xl">
-        <div className="hidden sm:block my-auto w-2/12 pl-10">
-          {p.map((elem, index) => (
-            <DisplayCoords key={index} index={index + 1} coord={elem} />
-          ))}
-          <div className="p-2">
-            <button
-              className="bg-gray-800 text-gray-100 p-1 px-4 rounded-md"
-              onClick={reset}
-            >
-              Reset
-            </button>
-          </div>
-        </div>
+        <LeftPanel p={p} reset={reset} />
 
         <div className="w-full sm:w-10/12">
           <svg
