@@ -2,7 +2,7 @@
 
 Az alkalmazás megépítéséhez <code>node</code> szükséges.
 Megépített változatban az
-[alábbi linken](https://github.com/tibi1220/next-cubic-bezier) megtekinthető.
+[alábbi linken](https://next-cubic-bezier.vercel.app/) megtekinthető.
 
 ## A program rövid leírása
 
