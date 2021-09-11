@@ -3,13 +3,13 @@ import BezierSvgBase from '../components/BezierSvgBase';
 
 const Index: React.FC = () => {
   return (
-    <>
-      <h1 className="text-center text-3xl lg:text-4xl xl:text-5xl p-4">
-        Sándor Tibor - Köbös Beziér-görbe ábrázolása
+    <div className="h-full">
+      <h1 className="text-center text-3xl lg:text-4xl xl:text-5xl p-4 bg-gray-800 text-gray-100">
+        Köbös Beziér-görbe ábrázolása
       </h1>
       <BezierSvgBase />
-      <div className="mt-20 p-4 bg-gray-800">
-        <p className="text-2xl text-gray-100 text-center">
+      <div className="p-4 bg-gray-800">
+        <p className="text-3xl text-gray-100 text-center">
           Sándor Tibor - C7XUDE (
           <a
             href="https://github.com/tibi1220/next-cubic-bezier"
@@ -22,7 +22,7 @@ const Index: React.FC = () => {
           )
         </p>
       </div>
-    </>
+    </div>
   );
 };
 

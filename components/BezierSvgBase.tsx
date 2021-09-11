@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Circle from './DraggableAnchor';
 import LeftPanel from './LeftPanel';
 
@@ -37,16 +37,16 @@ const BezierSvgBase: React.FC = () => {
 
   return (
     <>
-      <div className="flex justify-around text-sm lg:text-lg xl:text-xl">
+      <div className="flex flex-col-reverse sm:flex-row justify-around text-lg sm:text-md lg:text-lg xl:text-xl">
         <LeftPanel p={p} reset={reset} />
 
-        <div className="w-full sm:w-10/12">
+        <div className="w-full sm:w-9/12">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             stroke="currentColor"
             fill="none"
             viewBox="0, 0, 400, 400"
-            className="w-10/12 h-[70vh] mx-auto bg-gray-200 my-10 rounded-xl shadow-inner overflow-visible"
+            className="w-11/12 h-[70vh] mx-auto bg-gray-200 my-10 rounded-xl shadow-inner overflow-visible"
           >
             <path
               strokeLinecap="round"

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 
 export type Event = React.PointerEvent<SVGCircleElement>;
 export type State = {
@@ -17,6 +17,15 @@ interface Props {
 }
 
 const Circle: React.FC<Props> = ({ position, setPosition }) => {
+  // const radius = useMemo(() => {
+  //   const width = typeof window !== 'undefined' ? window.innerWidth : 1024;
+
+  //   if (width < 640) return 15;
+  //   if (width < 820) return 12;
+  //   if (width < 1040) return 10;
+  //   return 9;
+  // });
+
   const preventScroll = (e: TouchEvent) => e.preventDefault();
 
   const handlePointerDown = (e: Event) => {
@@ -74,7 +83,7 @@ const Circle: React.FC<Props> = ({ position, setPosition }) => {
       cy={position.y}
       fill={position.active ? 'red' : 'black'}
       opacity=".5"
-      r={9}
+      r={12}
       onPointerDown={handlePointerDown}
       onPointerUp={handlePointerUp}
       onPointerMove={handlePointerMove}
