@@ -43,7 +43,7 @@ const BezierSvgBase: React.FC = () => {
             stroke="currentColor"
             fill="none"
             viewBox="0, 0, 400, 400"
-            className="w-11/12 h-[70vh] mx-auto bg-gray-200 my-10 rounded-xl shadow-inner overflow-visible"
+            className="w-11/12 h-[70vh] max-h-[700px] mx-auto bg-gray-200 my-10 rounded-xl shadow-inner overflow-visible"
           >
             <path
               strokeLinecap="round"
